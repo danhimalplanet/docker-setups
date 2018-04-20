@@ -1,0 +1,7 @@
+TLSBind = "0.0.0.0:7697"
+
+#Debug = true
+
+[slack]
+UseDisplayName = false
+Restrict = ["russia"]

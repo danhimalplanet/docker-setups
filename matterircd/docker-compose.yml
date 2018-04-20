@@ -1,0 +1,25 @@
+# docker-compose.yml
+
+version: '3.5'
+
+services:
+
+  matterircd:
+    restart: unless-stopped
+    image: 42wim/matterircd:latest
+    ports:
+        - ${EXTERNAL_IP}:6697:6697
+    command: -conf /matterircd.toml
+    labels:
+      - "traefik.enable=false"
+    volumes:
+      - ./matterircd.toml:/matterircd.toml
+      - ${CERTS_DIR}/${HOST}/${HOST}.key:/key.pem
+      - ${CERTS_DIR}/${HOST}/${HOST}.crt:/cert.pem
+    networks:
+      - matterircd
+
+networks:
+  matterircd:
+    name: matterircd
+

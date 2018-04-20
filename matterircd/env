@@ -1,0 +1,5 @@
+EXTERNAL_IP=4.4.4.4
+
+HOST=russia.tech
+
+CERTS_DIR=/var/lib/docker/volumes/caddy-certs/_data/acme/acme-v01.api.letsencrypt.org/sites/
